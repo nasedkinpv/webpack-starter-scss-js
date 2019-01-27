@@ -1,0 +1,1 @@
+console.log('webpack starter kit with scss and modern js ready');
