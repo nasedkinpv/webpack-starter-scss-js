@@ -3,7 +3,8 @@ const path = require('path');
 // the path(s) that should be cleaned
 let pathToClean = [
     'dist/*.js',
-    'dist/*.css'
+    'dist/*.css',
+    'dist/*.*.map'
 ]
 
 // the clean options to use
@@ -19,6 +20,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
+
 
 
 module.exports = {
@@ -39,6 +42,7 @@ module.exports = {
             template: 'src/index.html',
             filename: 'index.html'
         }),
+        new FixStyleOnlyEntriesPlugin(),
         new MiniCssExtractPlugin({
             filename: 'main.css',
             hunkFilename: "[id].css"
