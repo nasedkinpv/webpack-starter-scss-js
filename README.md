@@ -1,14 +1,18 @@
-# webpack-starter-scss-js
+# # webpack-starter-scss-js
+Simple webpack configuration for static page development.
+Modern JS, SCSS compiler and autoprefixer, Browser-sync.
+
 Work in progress, feel free to participate
 
 
 ## Features
-- Webpack configuration
-- JS (babel)
+- JS (babel transpiler)
 - SCSS (autoprefixer, cssnano)
 - Browser-sync 
+ 
 ## Requirements
-- Node.js
+- Node.js, npm
+- http-server (for standalone server, without browser-sync)
 
 ## Installation 
     git clone https://github.com/nasedkinpv/webpack-starter-scss-js.git
@@ -23,15 +27,26 @@ WIP
 ### Run standalone http-server
     npm run server
 
-# Readme.md
+## File structure:
+### JavaScript
+* /src/scripts/main.js
+* /src/scripts/_yourScripts.js
 
-## Starting points:
-/src/scripts/main.js 
-use
+#### _yourScripts.js content
+    export function exampleFunction () {
+    }
 
-    import {} from '_something';
-    
-/src/styles/main.scss
-use 
+#### main.js content
+    import {
+        exampleFunction
+    }
+    from './_yourScripts.js';
 
-    @import 'your_styles';
+* /src/styles/main.scss
+* /src/styles/_yourStyles.scss
+
+####  _yourStyles.scss content
+    body { background: red }
+
+#### main.scss content 
+    @import 'yourStyles';
