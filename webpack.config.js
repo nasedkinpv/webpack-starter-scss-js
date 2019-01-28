@@ -32,7 +32,7 @@ module.exports = {
 
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'scripts.js'
+        filename: '[name].[hash:8].js',
     },
     plugins: [
         new CleanWebpackPlugin(pathToClean, cleanOptions),
@@ -40,7 +40,8 @@ module.exports = {
             inject: true,
             hash: true,
             template: 'src/index.html',
-            filename: 'index.html'
+            filename: 'index.html',
+            showErrors: true
         }),
         new FixStyleOnlyEntriesPlugin(),
         new MiniCssExtractPlugin({

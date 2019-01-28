@@ -1,1 +1,1 @@
-console.log('webpack starter kit with scss and modern js ready');
+console.log('webpack starter kit with scss and modern js ready, test1');
