@@ -45,7 +45,7 @@ module.exports = {
         }),
         new FixStyleOnlyEntriesPlugin(),
         new MiniCssExtractPlugin({
-            filename: '[name].css',
+            filename: '[name].[hash:8].css',
             hunkFilename: '[id].css'
         }),
         new BrowserSyncPlugin({
