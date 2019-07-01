@@ -61,7 +61,7 @@ module.exports = {
     devtool: 'source-map',
     module: {
         rules: [{
-                test: /\.(css|sass|scss)$/,
+                test: /\.(sa|sc|c)ss$/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     {
@@ -72,16 +72,15 @@ module.exports = {
                         }
                     },
                     {
+                        loader: 'postcss-loader',
+                        options: {}
+                    },
+                    {
                         loader: 'sass-loader',
                         options: {
                             sourceMap: true
                         }
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {}
-                    },
-
+                    }
                 ]
             },
             {
